@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener Demo</title>
+</head>
+<body>
+
+    <h2>Mouse + Keyboard Events Demo</h2>
+
+    <button id="myBtn">Click Me</button>
+    <button id="removeClick">Disable Click Event</button>
+
+    <p id="info">Press any key...</p>
+
+    <script>
+        let btn = document.getElementById("myBtn");
+        let info = document.getElementById("info");
+        let removeClickBtn = document.getElementById("removeClick");
+
+        function handleClick() {
+            alert("Button clicked!");
+        }
+
+        function handleKey(e) {
+            info.textContent = "You pressed: " + e.key;
+        }
+        btn.addEventListener("click", handleClick);
+        document.addEventListener("keydown", handleKey);
+
+        removeClickBtn.addEventListener("click", function () {
+            btn.removeEventListener("click", handleClick);
+            alert("Click event removed!");
+        });
+    </script>
+
+</body>
+</html>

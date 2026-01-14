@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithematic Operator</title>
+</head>
+<body>
+    Enter first number: <input type="number" id="number1"> <br><br>
+    Enter second number: <input type="number" id="number2"> <br><br>
+    <button onclick="add()">+</button>
+    <button onclick="substract()">-</button>
+    <button onclick="multiply()">x</button>
+    <button onclick="divide()">/</button>
+    <h4><p id="answer"></p></h4>
+
+    <script>
+        function add() {
+            let num1 = Number(document.getElementById("number1").value);
+            let num2 = Number(document.getElementById("number2").value);
+            let result = num1 + num2;
+            document.getElementById("answer").innerHTML = "The sum is: " + result;
+        }
+
+         function substract() {
+            let num1 = Number(document.getElementById("number1").value);
+            let num2 = Number(document.getElementById("number2").value);
+            let result = num1 - num2;
+            document.getElementById("answer").innerHTML = "The Difference is: " + result;
+        }
+
+         function  multiply() {
+            let num1 = Number(document.getElementById("number1").value);
+            let num2 = Number(document.getElementById("number2").value);
+            let result = num1 * num2;
+            document.getElementById("answer").innerHTML = "The multiplication is: " + result;
+        }
+
+         function divide() {
+            let num1 = Number(document.getElementById("number1").value);
+            let num2 = Number(document.getElementById("number2").value);
+            let result = num1 / num2;
+            document.getElementById("answer").innerHTML = "The division is: " + result;
+        }
+    </script>
+</body>
+</html>

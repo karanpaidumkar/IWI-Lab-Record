@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Demo</title>
+    <style>
+
+        * {
+            font-family: Arial, sans-serif;
+            margin: 5px;
+        }
+
+
+        #main-title {
+            color: darkblue;
+            text-align: center;
+        }
+
+
+        .highlight {
+            color: green;
+            font-weight: bold;
+        }
+
+   
+        .container p {
+            color: purple;
+            font-style: italic;
+        }
+
+
+        h3, footer {
+            background-color: lightgray;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">Welcome to CSS Selectors</h1>
+
+    <p class="highlight">This paragraph uses a class selector.</p>
+    <p>This paragraph has no class or id.</p>
+
+    <div class="container">
+        <h2>Descendant Selector Example</h2>
+        <p>This paragraph is inside a div.</p>
+    </div>
+
+    <h3>Grouped Selector Example</h3>
+    <p>Grouped selector applies same style to multiple elements.</p>
+
+    <footer>Footer Section</footer>
+</body>
+</html>

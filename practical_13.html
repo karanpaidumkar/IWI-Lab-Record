@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+// 1. User-defined functions
+// Function with parameters
+function greet(name) {
+    document.write("Hello " + name + "<br>");
+}
+
+// Function that returns a value
+function add(a, b) {
+    return a + b;
+}
+
+// Invoking (calling) the functions
+greet("Karan");
+document.write("Sum = " + add(10, 20) + "<br><br>");
+
+
+
+// 2. var, let, const Scope Demo
+// var (function scoped)
+var x = 10;
+if (true) {
+    var x = 20;   // same variable (var does NOT respect block scope).
+}
+document.write("var x = " + x + "<br>"); // Output: 20
+
+
+// let (block scoped)
+let y = 10;
+if (true) {
+    let y = 20;   // new variable inside this block
+    document.write("Inside block let y = " + y + "<br>"); // 20
+}
+document.write("Outside block let y = " + y + "<br>");    // 10
+
+
+// const (block scoped & cannot be changed)
+const z = 50;
+document.write("const z = " + z + "<br>");
+
+// z = 60;
+//  //ERROR (const cannot be reassigned)
+
+</script>
+
+</body>
+</html>

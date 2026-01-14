@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        h2{
+            text-align: center;
+        }
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+    border: 3px solid black;
+    border-radius: 40px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    margin-left: 400px;
+    margin-right: 400px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button{
+    background-color: rgb(10, 177, 10);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 10px;
+    color: white;
+}
+
+label{
+    font-size: 20px;
+}
+
+input{
+    width: 30rem;
+    height: 2rem;
+}
+        </style>
+    </head>
+<body>
+
+<h2>Simple Form Validation</h2>
+<div class="form">
+<form id="myForm" onsubmit="return validateForm()">
+    <label for="">Name:</label> <br>
+    <input type="text" id="name" oninput="clearMessage()"><br><br>
+
+    <label for="">Email: </label><br>
+    <input type="text" id="email" oninput="clearMessage()"><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+</div>
+
+<p id="msg" style="color:red;"></p>
+
+<script>
+function clearMessage() {
+    document.getElementById("msg").innerHTML = "";
+}
+
+function validateForm() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+
+    if (name === "") {
+        alert("Name is required!"); 
+        document.getElementById("msg").innerHTML = "Please enter your name.";
+        return false;
+    }
+
+    if (email === "") {
+        alert("Email is required!");
+        document.getElementById("msg").innerHTML = "Please enter your email.";
+        return false;
+    }
+
+
+    if (!email.includes("@") || !email.includes(".")) {
+        alert("Invalid Email!");
+        document.getElementById("msg").innerHTML = "Enter a valid email address.";
+        return false;
+    }
+
+    alert("Form submitted successfully!");
+    return true;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Combined Demo</title>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .highlight {
+            background: yellow;
+            color: black;
+            padding: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 id="heading">Hello Buddy!</h2>
+    <p id="text">This is a test paragraph.</p>
+    <br>
+    <button onclick="showText()">Show</button>
+    <button onclick="hideText()">Hide</button>
+    <button onclick="toggleText()">Toggle Show/Hide</button>
+    <button onclick="toggleHighlight()">Toggle Highlight Class</button>
+
+    <script>
+        
+        function showText() {
+            document.getElementById("text").style.display = "block";
+        }
+
+        function hideText() {
+            document.getElementById("text").style.display = "none";
+        }
+
+        function toggleText() {
+            let t = document.getElementById("text");
+
+            if (t.style.display === "none") {
+                t.style.display = "block";
+            } else {
+                t.style.display = "none";
+            }
+        }
+
+        function toggleHighlight() {
+            let h = document.getElementById("heading");
+
+            h.classList.toggle("highlight");
+        }
+    </script>
+
+</body>
+</html>

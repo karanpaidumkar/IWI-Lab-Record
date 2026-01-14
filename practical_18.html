@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Demo</title>
+</head>
+<body>
+
+    <h2>DOM Manipulation (Create / Append / Remove / Modify)</h2>
+
+    <input type="text" id="inputText" placeholder="Enter item..." />
+    <br><br>
+    <button id="addBtn">Add Item</button>
+    <button id="removeBtn">Remove Last</button>
+    <button id="modifyBtn">Modify First</button>
+
+    <ul id="items"></ul>
+
+    <script>
+        let ul = document.getElementById("items");
+        let input = document.getElementById("inputText");
+        let addBtn = document.getElementById("addBtn");
+        let removeBtn = document.getElementById("removeBtn");
+        let modifyBtn = document.getElementById("modifyBtn");
+
+        addBtn.addEventListener("click", function () {
+            let text = input.value;
+
+            if (text.trim() === "") {
+                alert("Please enter something!");
+                return;
+            }
+
+            let li = document.createElement("li");
+
+            li.textContent = text;
+
+            ul.appendChild(li);
+
+            input.value = "";
+        });
+
+        removeBtn.addEventListener("click", function () {
+            if (ul.lastChild) {
+                ul.removeChild(ul.lastChild);
+            } else {
+                alert("No items to remove!");
+            }
+        });
+
+        modifyBtn.addEventListener("click", function () {
+            if (ul.firstChild) {
+                ul.firstChild.textContent = "🔥 Modified Item!";
+            } else {
+                alert("No items to modify!");
+            }
+        });
+    </script>
+
+</body>
+</html>

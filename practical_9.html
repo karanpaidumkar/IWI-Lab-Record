@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Web Page</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ff9292;
+    }
+
+    header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 1em;
+    }
+
+    nav {
+        background-color: #222222;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 0.8em;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a:hover {
+        transform:scale(1.1);transition :0.2s;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .card {
+        background-color: white;
+        padding: 1em;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1em;
+        margin-top: 1em;
+    }
+
+    @media (min-width: 700px) {
+        nav {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        nav a {
+            width: auto;
+        }
+
+        .card-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card {
+            flex: 0 0 48%;
+        }
+    }
+
+    /* Desktops */
+    @media (min-width: 800px) {
+        .card {
+            flex: 0 0 30%;
+        }
+
+        header {
+            font-size: 1.5em;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Responsive Website</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <main>
+        <h2>Welcome!</h2>
+        <p>This is a simple example of a responsive web page using media queries and flexible units.</p>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>Card 1</h3>
+                <p>Content for card one goes here.</p>
+            </div>
+            <div class="card">
+                <h3>Card 2</h3>
+                <p>Content for card two goes here.</p>
+            </div>
+            <div class="card">
+                <h3>Card 3</h3>
+                <p>Content for card three goes here.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Website</p>
+    </footer>
+
+</body>
+</html>

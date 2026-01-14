@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>this paragraph is for conditional statements</h3>
+    <p id="conditional"></p>
+    <h3>this paragraph is for loops</h3>
+    <p id="forloop"></p>
+    <h3>this paragraph is for while loop</h3>
+    <p id="whileloop"></p>
+    <h3>this paragraph is for do while loop</h3>
+    <p id="do_whileloop"></p>
+
+    <script>
+        let a = 10;
+        if (a>15) {
+            document.getElementById("conditional").innerHTML = "The value of a is greater than 15";
+        } else {
+            document.getElementById("conditional").innerHTML = "The value of a is less than or equal to 15";
+        }
+
+
+        for (let i = 0; i < 5; i++) {
+            document.getElementById("forloop").innerHTML += "The value of i is: " + i + "<br>";
+        }
+
+        let j = 0;
+        while (j < 5) {
+            document.getElementById("whileloop").innerHTML += "The value of j is: " + j + "<br>";
+            j++;
+        }
+
+        let k = 0;
+        do {
+            document.getElementById("do_whileloop").innerHTML += "The value of k is: " + k + "<br>";
+            k++;
+        } while (k < 5);
+    </script>
+</body>
+</html>
